@@ -16,7 +16,7 @@ Gleich- und Wechselspannungsbetrieb ermittelt werden. Die Verstärkung war mit e
       (0,0) node[ground] (ground) {}
       (3,4) node[op amp,yscale=-1] (opamp) {}
       (opamp.+) to[short] (0,4.5) to[short] (0,4)
-      (opamp.-) to[short] (1.8,2.3) to[short] (4.17,2.3) to[R=$R_1$] (4.17,0.5) 
+      (opamp.-) to[short] (1.8,2.3) to[short] (4.17,2.3) to[R=$R_1$] (4.17,0.5)
 	to[short] (0,0.5) to[short] (7,0.5) to[short] (7,1.5)
       (opamp.out) to[R=$R_2$] (4.17,2.5) to[short] (4.17,2)
       (opamp.out) to[short] (7,4) to[short] (7,3.5)
@@ -83,14 +83,14 @@ mit $300mV$ beaufschlagt.\\
 \end{table}
 \noindent
 In den Messwerten kann man die lineare 48-fache Verstärkung der Eigangsspannung erkennen. Betrachtet man einen
-idealen Operationsverstärker so sollten die Ströme an den Eingängen gleich null und die Spannung am Widerstand $R_1$ 
-gleich der Eingangsspannung sein. Diese Annahme stimmt auch gut mit den Messwerten überein. Auch die Ströme an den 
-beiden Widerständen sind nahezu gleich groß, dies ist erforderlich um die Spannungsteilerregel in der Übertragungsfunktion 
+idealen Operationsverstärker so sollten die Ströme an den Eingängen gleich null und die Spannung am Widerstand $R_1$
+gleich der Eingangsspannung sein. Diese Annahme stimmt auch gut mit den Messwerten überein. Auch die Ströme an den
+beiden Widerständen sind nahezu gleich groß, dies ist erforderlich um die Spannungsteilerregel in der Übertragungsfunktion
 verwenden zu können.\\
 
 \subsection{Wechselspannungsverhalten}
 
-Zum protokollieren des Wechselspannungsverhalten sollte ein Rechtecksignal an den OPV angelegt und dessen Frequenz variiert 
+Zum protokollieren des Wechselspannungsverhalten sollte ein Rechtecksignal an den OPV angelegt und dessen Frequenz variiert
 werden.\\
 
 \begin{figure}[H]
@@ -108,6 +108,5 @@ werden.\\
 \end{figure}
 \noindent
 Das $100Hz$ Signal zeigt eine schöne $1:48$ Übertragung. Bei $10kHz$ jedoch
-wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte Tiefpassverhalten wirkt sich 
+wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte Tiefpassverhalten wirkt sich
 auf die Ausgangsspannung aus. Daher wird das Signal nicht mehr korrekten Verhältnis verstärkt und verschliffen übertragen.\\
-
