@@ -91,25 +91,23 @@ verwenden zu können.\\
 \subsection{Wechselspannungsverhalten}
 
 Zum protokollieren des Wechselspannungsverhalten sollte ein Rechtecksignal an den OPV angelegt und dessen Frequenz variiert 
-werden. In diesem Versuch wurde jedoch ein Dreieckssignal benützt. Dies macht jedoch keinen großen Unterschied,
-da es hier hauptsächlich um die Auswirkung hoher Frequenzen auf den OPV geht, was auch an einem Dreiecksignal gut 
-erkennbar ist.\\
+werden.\\
 
 \begin{figure}[H]
  \begin{center}
-  \includegraphics[height=6cm,width=12cm]{OsziBilder/InvVer_100Hz}
+  \includegraphics[height=6cm,width=12cm]{OsziBilder/nichtInvVer_100Hz}
  \end{center}
- \caption{Dreieckspannung $0,1V_{pp}$, $100Hz$ ($U_e$ orange, $U_a$ grün)}
+ \caption{Rechteckspannung $0,1V_{pp}$, $100Hz$ ($U_e$ orange, $U_a$ grün)}
 \end{figure}
 
 \begin{figure}[H]
  \begin{center}
-  \includegraphics[height=6cm,width=12cm]{OsziBilder/InvVer_10kHz}
+  \includegraphics[height=6cm,width=12cm]{OsziBilder/nichtInvVer_10kHz}
  \end{center}
- \caption{Dreieckspannung $0,1V_{pp}$, $10kHz$ ($U_e$ orange, $U_a$ grün)}
+ \caption{Rechteckspannung $0,1V_{pp}$, $10kHz$ ($U_e$ orange, $U_a$ grün)}
 \end{figure}
 \noindent
-Das $100Hz$ Signal zeigt eine schöne invertierte $1:48$ Übertragung. Bei $10kHz$ jedoch
-wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte 
-Tiefpassverhalten wirkt sich aus. So wird das Signal nicht mehr korrekt Verstärkt und verschliffen übertragen.\\
+Das $100Hz$ Signal zeigt eine schöne $1:48$ Übertragung. Bei $10kHz$ jedoch
+wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte Tiefpassverhalten wirkt sich 
+auf die Ausgangsspannung aus. Daher wird das Signal nicht mehr korrekten Verhältnis verstärkt und verschliffen übertragen.\\
 
