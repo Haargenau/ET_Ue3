@@ -109,7 +109,6 @@ erkennbar ist.\\
  \caption{Dreieckspannung $0,1V_{pp}$, $10kHz$ ($U_e$ orange, $U_a$ grün)}
 \end{figure}
 \noindent
-Das $100Hz$ Signal zeigt eine schöne invertierte $1:48$ Übertragung. Bei $10kHz$ jedoch
-wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte 
-Tiefpassverhalten wirkt sich aus. So wird das Signal nicht mehr korrekt Verstärkt und verschliffen übertragen.\\
-
+So sieht man am $100Hz$ Signal eine schöne invertierte $1:48$ Übertragung des Signals. Bei `$10kHz$ jedoch
+wirkt sich das bauteilbedingte Tiefpassverhalten auf die Übertragung aus und das Signal wird verschliffen. 
+Ebenso wird das Dreiecksignal um $1V$ weniger Verstärkt als bei der geringeren Frequenz.\\

@@ -106,12 +106,18 @@
 \end{titlepage}
 \setcounter{page}{2}
 
+%only sections in tableofcontents, no subsections
+\setcounter{tocdepth}{1}
+%sets tableofcontents color black
+\hypersetup{linkcolor=black}
+
 % start of actual lab protocol
 % CHANGE ME!
-\input{nichtInvVer}
-\input{invVer}
-\input{integrierer}
-\input{invSchmitt}
-\input{Anhang}
+\tableofcontents
+\include{nichtInvVer}
+\include{invVer}
+\include{integrierer}
+\include{invSchmitt}
+\include{Anhang}
 
 \end{document}
