@@ -77,8 +77,8 @@ $V=-\frac{82k \Omega}{1,5k\Omega}=-54,7$
 \end{minipage}
 \end{table}
 \noindent
-Die Strom- und Spannungsmessungen wruden mit zwei verschiedenen Eingangsspannungen durchgef\"uhrt, einmal mit $100mV$ Gleichspannung und einmal mit $300mV$ Gleichspannung. Die Simulationsergebnisse spiegeln sich schön in den Messwerten wieder. \\
-Laut Messung beträgt die Verstärkung $V=\frac{-5.2}{0.0964}=-53,9$, dieser Wert passt mit der errechneten Verst\"arkung von $V=-54,7$ sehr gut \"uberein. Die Str\"ome welche an den Eing\"angen in den OPV flie\ss{} waren zu klein um sie mit dem Ampermeter messen zu k\"onnen, dies stimmt mit der Theorie sehr gut \"uberein da bei einem idealen OPV auf Grund des unendlich großen Eingangswiderstandes kein Strom hineinflie\ss{}en kann. Der Srom durch die beiden Widerst\"ande fließt ist ebenfalls wie erwartet der Gleiche.
+Die Strom- und Spannungsmessungen wruden mit zwei verschiedenen Eingangsspannungen durchgef\"uhrt, einmal mit $100mV$ Gleichspannung und einmal mit $300mV$ Gleichspannung. Die Messungen passen sehr gut mit den Simulationsergebnissen \"uberein. \\
+Laut Messung beträgt die Verstärkung $V=\frac{-5.2}{0.0964}=-53,9$, dieser Wert passt mit der errechneten Verst\"arkung von $V=-54,7$ sehr gut \"uberein. Die Str\"ome welche an den Eing\"angen in den OPV flie\ss{} waren zu klein um sie mit dem Ampermeter messen zu k\"onnen, dies stimmt mit der Theorie sehr gut \"uberein da bei einem idealen OPV auf Grund des unendlich großen Eingangswiderstandes kein Strom hineinflie\ss{}en kann. Der Srom durch die Beiden Widerst\"ande ist ebenfalls wie erwartet der gleiche.
 
 \subsection{Messungen im Zeitbereich}
 \begin{figure}[H]
@@ -97,12 +97,12 @@ Laut Messung beträgt die Verstärkung $V=\frac{-5.2}{0.0964}=-53,9$, dieser Wer
 \noindent
 Das $100Hz$ Signal zeigt eine schöne invertierte $1:48$ Übertragung. Bei $10kHz$ jedoch
 wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte
-Tiefpassverhalten wirkt sich aus. So wird das Signal nicht mehr korrekt Verstärkt und verschliffen übertragen, wie man an den beiden Oszilloskopbildern gut erkennen kann.\\
+Tiefpassverhalten wirkt sich aus. So wird das Signal nicht mehr korrekt Verstärkt und verschliffen übertragen.\\
 \newpage
 
 
 \subsection{Bodediagramm}
-Es sollten zwei Bodediagramme aufgenommen werden, f\"ur beide wurde eine Sinusspannung mit $100mVpp$ als Eingangssingal gew\"ahlt. Bei der zweiten Messung wurde die Verst\"arkung um den Faktor 10 verringert, dies wurde durch Austauschen des Widerstandes $R_2$ von $82k\Omega$ auf $8,2k\Omega$ bewerkstelligt.
+Es sollten zwei Bodediagramme aufgenommen werden, f\"ur beide wurde eine Sinusspannung mit $100mVpp$ als Eingnagssingal gew\"ahlt. Bei der zweiten Messung wurde die Verst\"arkung um den Fatkor 10 veringert, dies wurde durch eine Verringerung des Widerstandes $R_2$ von $82k\Omega$ auf $8,2k\Omega$ bewerkstelligt.
 
 \begin{figure}[H]
   \centering
@@ -148,5 +148,5 @@ In diesem Bodediagramm ist sehr gut die Transitfrequnezn von $1MHz$ zu erkennen.
   \caption{invertierender Verst\"arker, $V=-5,47$, Phasengang}
 \end{figure}
 \noindent
-F\"ur diese Messung wurde wie oben bereits beschrieben die Verst\"arkung um den Faktor 10 verringert. Mit der kleineren Verstärkung macht sich auch die D\"ampfung des OPVs erst eine Dekade sp\"ater bemerkbar, danach f\"allt sie jedoch genauso mit -20dB/Dek ab.
+F\"ur diese Messung wurde wie oben bereits beschrieben die Verst\"arkung um den Faktor 10 verringert. Da nun de Ferst\"arkung um den Faktor 10 kleiner ist macht sich auch die D\"ampfung des OPVs erst eine Dekade sp\"ater bemerkbar, ab dann f\"alls sie jedoch genauso mit -20dB/Dek ab.
 \newpage

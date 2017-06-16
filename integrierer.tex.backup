@@ -2,7 +2,7 @@
 
 \section{Integrierer}
 \subsection{Aufgabenstellung}
-Es soll ein Integrierer aufgebaut und dessen Funktion überpr\"uft werden. Anschlie\ss{}end soll die Funktion des Integrierers erl\"autert werden.
+Es soll ein Integrierer aufgebaut werden und dessen Funktion gepr\"uft werden. Anschlie\ss{}end soll die Funtkion des Integrierers erl\"autert werden.
 \subsection{Schaltung}
 \begin{figure}[H]
   \begin{center}
@@ -30,7 +30,7 @@ Es soll ein Integrierer aufgebaut und dessen Funktion überpr\"uft werden. Ansch
   \end{center}
 \end{figure}
 \noindent
-F\"ur die Schaltung des Integrierers wird die Grundschatung des invertierenden Verst\"arkers verwendet, es wird lediglich der R\"uckkopplungs Widerstand durch einen Kondensator ersetzt. Der Widerstand parallel zum Kondensator wird um ein Vielfaches gr\"o\ss{}er gew\"ahlt als der Widerstand am Eingang ($100*R_1$ in Abb. 15). Dieser beeinflusst die Schaltungseigenschaften nicht, er dient der Entladung des Kondensator vor dem Einschaltzeitpunkt um die Anfangsbedingung ($U_a=0V$) des Integrators zu bewerkstelligen.
+F\"ur die Schaltung des Integrierers wird die Grundschatung des invertierenden Verst\"arkers verwendet, es wird lediglich der R\"uckkopplungs Widerstand durch einen Kondensator ersetzt. Der Widerstand parallel zum Kondensator wird um vieles gr\"o\ss{}er gew\"ahlt als der Widerstand am Eingang (in der Regel $10*R_1$). Dieser beeinflusst die Schaltungseigenschaften nicht, er dient der Entladung des Kondensator vor dem Eingangszeipunkt um die Anfangsbedingung ($U_a=0V$) des Integrators zu bewerkstelligen.
 \newpage
 \subsection{Messung im Zeitbereich}
 F\"ur die Messung im Zeitbereich wurde am Eingang ein Rechtecksignal mit $f=5Hz$ und einer Amplitude von $0.1Vpp$ angelegt.
@@ -41,7 +41,7 @@ F\"ur die Messung im Zeitbereich wurde am Eingang ein Rechtecksignal mit $f=5Hz$
  \end{center}
  \caption{Rechteckspannung $0,1V_{pp}$, $5Hz$ ($U_e$ orange, $U_a$ grün)}
 \end{figure}
-Jede Halbwelle des Eingangssignales entspricht einem Sprung und dieser integriert ergibt eine Gerade. Da es sich um einen invertierenden Integrierer handelt l\"auft die Gerade immer entegen der Sprungrichtung. In der Abbildung ist genau dieses Verhalten zu erkennen, springt die Eingangspannung ins Negative, entspricht die Ausgnagsspannung einer Geraden mit positiver Steigung, springt die Eingangsspannung ins Positive so ist die Ausgangsspannung eine Gerade mit negativer Steigung.
+Jede Halbwelle des Eingangssinales entspricht einen Sprung und ein Sprung integriert ergibt eine Gerade. Da es sich um einen invertierenden Integrierer handelt l\"auft die Gerade immer entegen des Sprunges. In der Abbildung ist genau dieses Verhatlen sehr gut zu erkennen, springt die Eingangspannung ins Negative, entspricht die Ausgnagsspannung einer Gerade mit positiver Steigung, springt die Eingangsspannung ins Positive ist die Ausgangsspannung eine Gerade mit negativer Steigung.
 \newpage
 \subsection{Erl\"auterung der Schaltung}
 \begin{figure}[H]
@@ -58,9 +58,9 @@ Jede Halbwelle des Eingangssignales entspricht einem Sprung und dieser integrier
   \caption{Formeln zur Berechnung des Integrierers}
 \end{figure}
 \noindent
-Da auf Grund des hohen Eingangswiderstandes kein Strom in den OPV flie\ss{}t, ist auch der Strom durch den Widerstand und Kondensator nahezu ident. Dieser Strom l\"asst sich sowohl am Widerstand als auch am Kondensator durch das Ohm'sche Gesetz berechnen. Formt man nun das Ohm'sche Gesetz von $C$ nach $du$ um, so erh\"alt man eine Differntialgleichung 1. Ordnung. Diese l\"asst sich durch Integrieren l\"osen und es ergibt sich eine Formel zur Berechnung von $U_a$. Setzt man nun die Berechnung f\"ur $I$ am Widerstand in die Umgeformte Formel von $C$ ein erh\"alt man die Formel zur Berechnung der Ausgangsspannung. \\ \\
+Da auf Grund des hohen Eingangswiderstandes kein Strom in den OPV flie\ss{}t, flie\ss{}t durch den Widerstand und den Kondensator quasi der gleiche Strom. Dieser Strom l\"asst sich sowohl am Widerstand als auch am Kondensator durch das Ohm'sche Gesetz berechnen. Formt man nun das Ohm'sche Gesetz von $C$ nach $du$ um, so erh\"alt man eine Differntialgleichung 1. Ordnung. Diese l\"asst sich durch Integrieren l\"osen und es ergibt sich eine Formel zur Berechnung von $U_a$. Setzt man nun die Berechnung f\"ur $I$ am Widerstand in die Umgeformte Formel von $C$ ein erh\"alt man die Formel zur Berechnung der Ausgangsspannung. \\ \\
 $U_a = -\frac{1}{RC} \int U_e dt$ \\  \\
-Diese Formel besagt, dass die Ausgangsspannung das Integral der Eingangsspannung mit dem Proportionalit\"atsfaktor $\frac{1}{RC}$ ist. \\ \\
-Mit hilfe des Integrieres k\"onnen, wie der Name schon sagt, Integrale gel\"ost werden. Diese Schaltung wird in der Regelungstechnik f\"ur Integralrelger verwendet (PI-, PID-Regler).
+Diese Formel besagt, dass die Ausgangsspannung das Integral der Eingangsspannunt mit dem Proportionalit\"atsfaktor $\frac{1}{RC}$ ist. \\ \\
+Mithilfe des Integrieres k\"onnen, wie der Name schon sagt, Integrale gel\"ost werden. Diese Schaltung wird in der Regelungstechnik f\"ur Integralrelger verwendet (PI-, PID-Regler).
 
 \newpage

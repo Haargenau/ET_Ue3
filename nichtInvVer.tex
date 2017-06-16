@@ -36,9 +36,9 @@ Gleich- und Wechselspannungsbetrieb ermittelt werden. Die Verstärkung war mit e
 Der Operationsverstärker wurde mit $\pm15V$ versorgt und die Widerstände wurden wie folgt gewählt.\\
 \begin{align*}
  R_1 &= 1k\Omega, R_2 = 47k\Omega\\
- -\frac{U_a}{U_e} &= \frac{R_1 + R_2}{R_1}\\
- U_a &= -U_e(1 + \frac{R_2}{R_1})\\
- U_a &= -48*U_e\\
+ \frac{U_a}{U_e} &= \frac{R_1 + R_2}{R_1}\\
+ U_a &= U_e(1 + \frac{R_2}{R_1})\\
+ U_a &= 48*U_e\\
 \end{align*}
 
 \subsection{Gleichspannungsverhalten}
@@ -89,6 +89,7 @@ gleich der Eingangsspannung sein. Diese Annahme stimmt auch gut mit den Messwert
 beiden Widerständen sind nahezu gleich groß, dies ist erforderlich um die Spannungsteilerregel in der Übertragungsfunktion
 verwenden zu können.\\
 
+\newpage
 \subsection{Wechselspannungsverhalten}
 
 Zum protokollieren des Wechselspannungsverhalten sollte ein Rechtecksignal an den OPV angelegt und dessen Frequenz variiert
@@ -110,4 +111,4 @@ werden.\\
 \noindent
 Das $100Hz$ Signal zeigt eine schöne $1:48$ Übertragung. Bei $10kHz$ jedoch
 wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte Tiefpassverhalten wirkt sich
-auf die Ausgangsspannung aus. Daher wird das Signal nicht mehr korrekten Verhältnis verstärkt und verschliffen übertragen.\\
+auf die Ausgangsspannung aus. Daher wird das Signal nicht mehr im korrekten Verhältnis verstärkt und verschliffen übertragen.\\
