@@ -32,7 +32,7 @@ Es soll ein invertierender OPV aufgebaut werden und desen Funktion durch Stom- u
 \noindent
 Da es sich bei dieser Schlatung um einen invertierenden Verst\"arker handelt, wird die Eingangsspannung an den invertierenden Eingang des OPV geschaltet.
 Der Ausgang wird ebenfalls auf den invertierenden Eingang gegengekoppelt, um eine brauchbare Verst\"arkung einstellen zu k\"onnen. Ein Idealer OPV ohne Gegenkopplung w\"urde die Differenzspannung zwischen invertierenden und nicht-invertierenden Eingang $\infty$ verst\"arken. Die Verst\"arkung wird mit den beiden Widerst\"anden $R_1$
-und $R_2$ eingestellt. Die beiden Spannungsquellen $V_2$ und $V_3$ stellen die symmetrische Versorgungsspannung von $-15V$ bis $+15V$ dar.\\ \\
+und $R_2$ eingestellt. Der Operationsverst\"arker wird symetrisch mit $V_{cc}=+15V$ und $V_{ss}=-15V$ versorgt.\\ \\
 $\frac{U_e}{U_a}=-\frac{R_1}{R_2} \Rightarrow U_a=-U_e*\frac{R_2}{R_1} \Rightarrow V=-\frac{R_2}{R_1}$ \\ \\
 Da sich die Verst\"arkung $V$ laut Angabe zwischen $-40$ und $-60$ befinden soll wurden f\"ur die Widerst\"ande folgende Werte gew\"ahlt: \\ \\
 $R_1=82k\Omega$ \\
@@ -95,7 +95,7 @@ Laut Messung beträgt die Verstärkung $V=\frac{-5.2}{0.0964}=-53,9$, dieser Wer
  \caption{Dreieckspannung $0,1V_{pp}$, $10kHz$ ($U_e$ orange, $U_a$ grün)}
 \end{figure}
 \noindent
-Das $100Hz$ Signal zeigt eine schöne invertierte $1:48$ Übertragung. Bei $10kHz$ jedoch
+Das $100Hz$ Signal zeigt eine schöne invertierte $1:54$ Übertragung. Bei $10kHz$ jedoch
 wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte
 Tiefpassverhalten wirkt sich aus. So wird das Signal nicht mehr korrekt Verstärkt und verschliffen übertragen, wie man an den beiden Oszilloskopbildern gut erkennen kann.\\
 \newpage
