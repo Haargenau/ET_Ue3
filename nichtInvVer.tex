@@ -17,7 +17,7 @@ Gleich- und Wechselspannungsbetrieb ermittelt werden. Die Verstärkung war mit e
         (3,3.5) to[short] (3,3) node[vss] {$V_{SS}$}
         (opamp.+) to[short] (0,4.5)
         (opamp.-) to[short] (1.5,3.5) to[short] (1.5,1.5) to[short] (4.5,1.5){}
-        (4.5,4) to[R={$R_2$}] (4.5,1.5) to[R={$R_1$}] (4.5,-0.5) node[ground] (ground) {}
+        (4.5,4) to[R={$R_2$},v>=$U_{R2}$] (4.5,1.5) to[R={$R_1$},v>=$U_{R1}$] (4.5,-0.5) node[ground] (ground) {}
         (opamp.out) to[short] (8,4)
         (8,-0.5) node[ground] (ground) {}
         (0,-0.5) node[ground] (ground) {}
@@ -26,7 +26,7 @@ Gleich- und Wechselspannungsbetrieb ermittelt werden. Die Verstärkung war mit e
         \draw (-0.5,2.2) node[] {$U_e$};
         \draw (8,3.7) to[short] (8,0.2) node[vee] {};
         \draw (8.5,1.7) node[] {$U_a$};
-
+	\draw (4.2,4.8) node[] {LM741};
       \end{circuitikz}
     }
     \caption{nicht inververtierender OPV}
@@ -85,7 +85,7 @@ mit $300mV$ beaufschlagt.\\
 \noindent
 In den Messwerten kann man die lineare 48-fache Verstärkung der Eigangsspannung erkennen. Betrachtet man einen
 idealen Operationsverstärker so sollten die Ströme an den Eingängen gleich null und die Spannung am Widerstand $R_1$
-gleich der Eingangsspannung sein. Diese Annahme stimmt auch gut mit den Messwerten überein. Auch die Ströme an den
+gleich der Eingangsspannung sein. Diese Annahme stimmt auch einigermaßen gut mit den Messwerten überein. Auch die Ströme an den
 beiden Widerständen sind nahezu gleich groß, dies ist erforderlich um die Spannungsteilerregel in der Übertragungsfunktion
 verwenden zu können.\\
 
@@ -109,6 +109,6 @@ werden.\\
  \caption{Rechteckspannung $0,1V_{pp}$, $10kHz$ ($U_e$ orange, $U_a$ grün)}
 \end{figure}
 \noindent
-Das $100Hz$ Signal zeigt eine schöne $1:48$ Übertragung. Bei $10kHz$ jedoch
+Das $100Hz$ Signal zeigt eine schöne um den Faktor $48$ verstärkte Übertragung. Bei $10kHz$ jedoch
 wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte Tiefpassverhalten wirkt sich
-auf die Ausgangsspannung aus. Daher wird das Signal nicht mehr im korrekten Verhältnis verstärkt und verschliffen übertragen.\\
+auf die Ausgangsspannung aus. Daher wird das Signal nicht mehr im korrekten Verhältnis verstärkt und verzerrt übertragen.\\

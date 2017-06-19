@@ -15,9 +15,9 @@ Es soll ein invertierender OPV aufgebaut werden und desen Funktion durch Stom- u
     (3,4) node[op amp] (opamp) {}
     (3,4.5) to[short] (3,5) node[vcc] {$V_{CC}$}
     (3,3.5) to[short] (3,3) node[vss] {$V_{SS}$}
-    (opamp.-) to[R={$R_1$}{$=1,5k$}] (-2,4.5)
+    (opamp.-) to[R={$R_1$}{$=1,5k$},v<=$U_{R1}$] (-2,4.5)
     (opamp.+) to[short] (1.5,3.5) to[short] (1.5,2) node[ground] (ground) {}
-    (1.5,4.5) to[short] (1.5,6.5) to[R={$R_2$}{$=82k$}] (4.5,6.5) to[short] (4.5,4)
+    (1.5,4.5) to[short] (1.5,7.5) to[R={$R_2$}{$=82k$},v<=$U_{R2}$] (4.5,7.5) to[short] (4.5,4)
     (opamp.out) to[short] (6,4)
     (6,2) node[ground] (ground) {}
     ;
@@ -25,6 +25,7 @@ Es soll ein invertierender OPV aufgebaut werden und desen Funktion durch Stom- u
     \draw (-1.5,3) node[] {$U_e$};
     \draw (6,3.7) to[short] (6,2.7) node[vee] {};
     \draw (6.5,3) node[] {$U_a$};
+    \draw (4.2,3.5) node[] {LM741};
     \end{circuitikz}
     \caption{inververtierender OPV}
   \end{center}
@@ -78,7 +79,7 @@ $V=-\frac{82k \Omega}{1,5k\Omega}=-54,7$
 \end{table}
 \noindent
 Die Strom- und Spannungsmessungen wruden mit zwei verschiedenen Eingangsspannungen durchgef\"uhrt, einmal mit $100mV$ Gleichspannung und einmal mit $300mV$ Gleichspannung. Die Simulationsergebnisse spiegeln sich schön in den Messwerten wieder. \\
-Laut Messung beträgt die Verstärkung $V=\frac{-5.2}{0.0964}=-53,9$, dieser Wert passt mit der errechneten Verst\"arkung von $V=-54,7$ sehr gut \"uberein. Die Str\"ome welche an den Eing\"angen in den OPV flie\ss{} waren zu klein um sie mit dem Ampermeter messen zu k\"onnen, dies stimmt mit der Theorie sehr gut \"uberein da bei einem idealen OPV auf Grund des unendlich großen Eingangswiderstandes kein Strom hineinflie\ss{}en kann. Der Srom durch die beiden Widerst\"ande fließt ist ebenfalls wie erwartet der Gleiche.
+Laut Messung beträgt die Verstärkung $V=\frac{-5.2V}{96.4mV}=-53,9$, dieser Wert passt mit der errechneten Verst\"arkung von $V=-54,7$ sehr gut \"uberein. Die Str\"ome welche an den Eing\"angen in den OPV flie\ss{} waren zu klein um sie mit dem Ampermeter messen zu k\"onnen, dies stimmt mit der Theorie sehr gut \"uberein da bei einem idealen OPV auf Grund des unendlich großen Eingangswiderstandes kein Strom hineinflie\ss{}en kann. Der Srom durch die beiden Widerst\"ande fließt ist ebenfalls wie erwartet der Gleiche.
 
 \subsection{Messungen im Zeitbereich}
 \begin{figure}[H]
@@ -95,9 +96,9 @@ Laut Messung beträgt die Verstärkung $V=\frac{-5.2}{0.0964}=-53,9$, dieser Wer
  \caption{Dreieckspannung $0,1V_{pp}$, $10kHz$ ($U_e$ orange, $U_a$ grün)}
 \end{figure}
 \noindent
-Das $100Hz$ Signal zeigt eine schöne invertierte $1:54$ Übertragung. Bei $10kHz$ jedoch
+Das $100Hz$ Signal zeigt eine schöne invertierte Übertragung, mit einem Verstärkungsfaktor von $54$. Bei $10kHz$ jedoch
 wurde die Grenzfrequenz der Operationsverstärkerschaltung überschritten und das bauteilbedingte
-Tiefpassverhalten wirkt sich aus. So wird das Signal nicht mehr korrekt Verstärkt und verschliffen übertragen, wie man an den beiden Oszilloskopbildern gut erkennen kann.\\
+Tiefpassverhalten wirkt sich aus. So wird das Signal nicht mehr korrekt Verstärkt und verzerrt übertragen, wie man an den beiden Oszilloskopbildern gut erkennen kann.\\
 \newpage
 
 
@@ -107,9 +108,10 @@ Es sollten zwei Bodediagramme aufgenommen werden, f\"ur beide wurde eine Sinussp
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmode=log, xmin=10, xmax=1e6, xlabel={Frequenz [Hz]}, ylabel={Amplitude [dB]},y tick label style={grid=major}]
+    \begin{axis}[width=15cm, height=7cm, xmode=log, xmin=10, xmax=1e6, xlabel={Frequenz [Hz]}, ymin=-8, ymax=40, ylabel={Amplitude [dB]},y tick label style={grid=major}]
       \addplot table[x=Frequenz, y=dB, col sep=comma] {./csv_files/invVer_bigAmpl.csv};
-      %\node[label={260:{$f_g$}},circle,fill=black,inner sep=3pt] at (axis cs:15580,12) {};
+      \node[label={180:{$f_g$}},draw=none] at (axis cs:20000,15) {};
+      \addplot [color=black] coordinates {(20000,45) (20000,-10)};
     \end{axis}
   \end{tikzpicture}
   \caption{invertierender Verst\"arker, $V=-54,7$, Amplitudengang}
@@ -117,22 +119,24 @@ Es sollten zwei Bodediagramme aufgenommen werden, f\"ur beide wurde eine Sinussp
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmode=log, xmin=10, xmax=1e6, xlabel={Frequenz [Hz]}, ylabel={Phase [$^\circ$]},y tick label style={grid=major}]
+    \begin{axis}[disabledatascaling, width=15cm, height=7cm, xmode=log, xmin=10, xmax=1e6, xlabel={Frequenz [Hz]}, ymin=45, ymax=190, ylabel={Phase [$^\circ$]}, ytick={0,45,90,135,180},y tick label style={grid=major}]
       \addplot table[x=Frequenz, y=Phi, col sep=comma] {./csv_files/invVer_bigAmpl.csv};
-      %\node[label={260:{$f_g$}},circle,fill=black,inner sep=3pt] at (axis cs:15580,12) {};
+      \node[label={180:{$f_g$}},draw=none] at (axis cs:20000,100) {};
+      \addplot [color=black] coordinates {(20000,200) (20000,-20)};
     \end{axis}
   \end{tikzpicture}
   \caption{invertierender Verst\"arker, $V=-54,7$, Phasengang}
 \end{figure}
 \noindent
-In diesem Bodediagramm ist sehr gut die Transitfrequnezn von $1MHz$ zu erkennen. Da sich ein realer OPV intern wie ein Tiefpassfilter verh\"alt nimmt die Verst\"arkung von der Grenzfrequnez bis zur Transitfrequnez mit $-20dB/DEK$ ab. Eine Verst\"arkung von $-54,7$ entspricht $34,76dB$ d.h. die D\"ampfung wird bei dieser Beschaltung erst ab $10kHz$ bemerkbar.
+In diesem Bodediagramm ist sehr gut die Transitfrequnezn von $ca.1MHz$ zu erkennen. Da sich ein realer OPV intern wie ein Tiefpassfilter verh\"alt nimmt die Verst\"arkung von der Grenzfrequnez bis zur Transitfrequnez mit $-20dB/DEK$ ab. Eine Verst\"arkung von $-54,7$ entspricht $34,76dB$ d.h. die D\"ampfung wird bei dieser Beschaltung erst ab $10kHz$ bemerkbar.
 
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmode=log, xmin=10, xmax=1e6, xlabel={Frequenz [Hz]}, ylabel={Amplitude [dB]},y tick label style={grid=major}]
+    \begin{axis}[width=15cm, height=7cm, xmode=log, xmin=10, xmax=1e6, xlabel={Frequenz [Hz]}, ymin=-8, ymax=40, ylabel={Amplitude [dB]},y tick label style={grid=major}]
       \addplot table[x=Frequenz, y=dB, col sep=comma] {./csv_files/invVer_smlAmpl.csv};
-      %\node[label={260:{$f_g$}},circle,fill=black,inner sep=3pt] at (axis cs:15580,12) {};
+      \node[label={0:{$f_g$}},draw=none] at (axis cs:125000,25) {};
+      \addplot [color=black] coordinates {(125000,45) (125000,-10)};
     \end{axis}
   \end{tikzpicture}
   \caption{invertierender Verst\"arker, $V=-5,47$, Amplitudengang}
@@ -140,9 +144,10 @@ In diesem Bodediagramm ist sehr gut die Transitfrequnezn von $1MHz$ zu erkennen.
 \begin{figure}[H]
   \centering
   \begin{tikzpicture}
-    \begin{axis}[width=15cm, height=7cm, xmode=log, xmin=10, xmax=1e6, xlabel={Frequenz [Hz]}, ylabel={Phase [$^\circ$]},y tick label style={grid=major}]
+    \begin{axis}[disabledatascaling, width=15cm, height=7cm, xmode=log, xmin=10, xmax=1e6, xlabel={Frequenz [Hz]}, ymin=45, ymax=190, ylabel={Phase [$^\circ$]}, ytick={0,45,90,135,180}, y tick label style={grid=major}]
       \addplot table[x=Frequenz, y=Phi, col sep=comma] {./csv_files/invVer_smlAmpl.csv};
-      %\node[label={260:{$f_g$}},circle,fill=black,inner sep=3pt] at (axis cs:15580,12) {};
+      \node[label={0:{$f_g$}},draw=none] at (axis cs:125000,150) {};
+      \addplot [color=black] coordinates {(125000,200) (125000,-20)};
     \end{axis}
   \end{tikzpicture}
   \caption{invertierender Verst\"arker, $V=-5,47$, Phasengang}
